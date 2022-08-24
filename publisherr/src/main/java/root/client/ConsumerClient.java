@@ -30,9 +30,10 @@ public class ConsumerClient {
         try {
             httpRequest = HttpRequest.newBuilder()
                     .uri(new URI(url))
-                    .POST(HttpRequest.BodyPublishers.ofString(url))
+                    .POST(HttpRequest.BodyPublishers.ofString(message))
                     .build();
         } catch (URISyntaxException e) {
+
             throw new RuntimeException(e);
         }
         try {
